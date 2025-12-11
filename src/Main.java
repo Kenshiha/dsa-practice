@@ -15,7 +15,7 @@ import java.util.Arrays;
         }
 
         public static void main(String[] args) {
-            int num[] = {2,2,3,4,3,5,6,7,7};
+            int num[] = {2,2,3,3,4,5,7};
 
             Main obj = new Main();
             int res = obj.rmDuplicates(num);
