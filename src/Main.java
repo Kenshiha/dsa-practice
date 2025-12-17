@@ -1,25 +1,28 @@
 import java.util.Arrays;
+import java.util.Stack;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
     public class Main {
 
-        public int rmDuplicates(int[] num){
-            int i = 0;
-            for (int j = 1;j< num.length;j++){
-                if (num[i] != num[j]){
-                    num[++i] = num[j];
+        public static int[] nextGreater(int[] nums){
+            int n = nums.length;
+            int[] ans = new int[n];
+            Stack<Integer> stack = new Stack<>();
+            for (int i = n-1; i >= 0; i--){
+                while(!stack.isEmpty() && nums[stack.peek()] < nums[i]){
+                    stack.pop();
                 }
+                ans[i] = stack.isEmpty() ? -1 : nums[stack.peek()];
+                stack.push(i);
             }
-            return i+1;
+            return ans;
         }
 
         public static void main(String[] args) {
-            int num[] = {2,2,3,3,4,5,7};
-
-            Main obj = new Main();
-            int res = obj.rmDuplicates(num);
-            System.out.println(res);
-            System.out.println(Arrays.toString(num));
+            int nums[] = {2,7,3,6,5,7};
+            int[] res =  nextGreater(nums);
+            System.out.println(Arrays.toString(nums));
+            System.out.println(Arrays.toString(res));
         }
     }
