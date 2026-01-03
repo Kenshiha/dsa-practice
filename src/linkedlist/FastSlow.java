@@ -20,16 +20,7 @@ public class FastSlow {
             return slow;
         }
         public static void main(String[] args){
-            ListNode head = new ListNode(1);
-            head.next = new ListNode(3);
-            head.next.next = new ListNode(4);
-            head.next.next.next = new ListNode(5);
-            head.next.next.next.next = new ListNode(6);
-            head.next.next.next.next.next = new ListNode(7);
-            head.next.next.next.next.next.next = new ListNode(8);
-            head.next.next.next.next.next.next.next = new ListNode(9);
-            head.next.next.next.next.next.next.next.next = new ListNode(5);
-
+            ListNode head = new ListNode(1,new ListNode(3, new ListNode(4,new ListNode(5,new ListNode(6,new ListNode(7))))));
             ListNode middle = middleNode(head);
             System.out.println("Middle node value: " + middle.val);
 
