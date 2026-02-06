@@ -19,7 +19,7 @@ public class PrefixSum {
     public static void main(String[] args) {
         int[] nums = {10, 20, 10, 5, 15,20,30};
         int[] prefix = buildPrefix(nums);  // [0,10,30,40,45,60]
-        System.out.println(rangeSum(prefix, 1, 3));// 35 (20+10+5)
+        System.out.println(rangeSum(prefix, 2, 3));// 35 (20+10+5)
         System.out.println(Arrays.toString(prefix));
     }
 }
