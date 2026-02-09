@@ -33,7 +33,7 @@ public class Palindrome {
         Palindrome p = new Palindrome();
 
         // Test 1: Palindrome 1→2→2→1
-        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(2,new ListNode(1,new ListNode(2))))));
+        ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(2,new ListNode(1)))));
         System.out.println("Test1: " + p.isPalindrome(head1));  // true
 
         // Test 2: Not palindrome 1→2
