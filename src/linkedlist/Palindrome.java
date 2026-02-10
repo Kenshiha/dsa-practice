@@ -37,7 +37,7 @@ public class Palindrome {
         System.out.println("Test1: " + p.isPalindrome(head1));  // true
 
         // Test 2: Not palindrome 1→2
-        ListNode head2 = new ListNode(1, new ListNode(2));
+        ListNode head2 = new ListNode(1, new ListNode(2,new ListNode(1)));
         System.out.println("Test2: " + p.isPalindrome(head2));  // false
     }
 }
