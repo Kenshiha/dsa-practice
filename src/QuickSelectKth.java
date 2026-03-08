@@ -44,7 +44,7 @@ public class QuickSelectKth {
 
 
     public static void main(String[] args) {
-        int[] arr = {3, 1, 4, 2, 5, 9, 3};
+        int[] arr = {30, 10, 40, 2, 50, 90, 30};
 
         System.out.println("1st smallest: " + kthSmallest(arr.clone(), 1)); // expect 1
         System.out.println("2nd smallest: " + kthSmallest(arr.clone(), 2)); // expect 1
