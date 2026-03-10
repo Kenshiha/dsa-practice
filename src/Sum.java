@@ -3,16 +3,31 @@ import java.util.Map;
 
 public class Sum {
 
-    public int[] twoSum(int[] arr,int target){
+//    public int[] twoSum(int[] arr,int target){
+//
+//        Map<Integer, Integer> map = new HashMap<>();
+//        for (int i = 0; i < arr.length;i++ ) {
+//            int need = target - arr[i];
+//            if (map.containsKey(need)) {
+//                return new int[]{map.get(need), i};
+//            }
+//        map.put(arr[i], i);
+//        }
+//        return new int[]{};
+//    }
 
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < arr.length;i++ ) {
-            int need = target - arr[i];
-            if (map.containsKey(need)) {
-                return new int[]{map.get(need), i};
-            }
-        map.put(arr[i], i);
+
+
+    public int[] twoSum(int[] arr, int k){
+
+    Map<Integer, Integer> map= new HashMap<>();
+    for(int i =0 ; i <= arr.length; i++){
+        int ans = k - arr[i];
+        if(map.containsKey(ans)){
+            return new int[]{map.get(ans),i};
         }
+        map.put(arr[i],i );
+    }
         return new int[]{};
     }
 
