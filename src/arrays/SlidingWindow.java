@@ -22,7 +22,7 @@ public class SlidingWindow {
     }
 
     public static void main(String[] args){
-        int arr[] = {1,2,3,5,5,6,0};
+        int arr[] = {1,2,3,5,4,6,0,8};
         int k = 3;
 
         int res = windowSum(arr,k);
