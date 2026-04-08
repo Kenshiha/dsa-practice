@@ -2,7 +2,7 @@ package arrays;
 
 public class SlidingWindow {
 
-
+//This is sliding window which give maximum sum of target element sequance
     public static int windowSum(int[] arr, int k){
         int n = arr.length;
         if( k > n){
