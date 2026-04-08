@@ -1,13 +1,17 @@
 package arrays;
 
+import java.util.Arrays;
 import java.util.HashMap;
+
+//This is Two Sum programm to find two element which sum is equals to target value
 
 public class Sum {
 
-    public int[] twoSum(int[] arr, int k){
-        HashMap<Integer,Integer> map = new HashMap<>();
+    public int[] twoSum(int[] arr,int k){
 
-        for(int i = 0; i <= arr.length;i++){
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for(int i = 0;i<arr.length;i++){
             int ans = k - arr[i];
             if(map.containsKey(ans)){
                 return new int[]{map.get(ans),i};
@@ -15,17 +19,17 @@ public class Sum {
             map.put(arr[i],i );
         }
         return new int[]{};
-
     }
     public static void main(String[] args){
         int arr[] = {1,2,4,5,6,7,8};
+//        int target = Integer.parseInt(args[0]);
         int target = 10;
-
         Sum s = new Sum();
         int[] result = s.twoSum(arr, target);
 
         if (result.length == 2){
             System.out.println("Values = " + arr[result[0]] + " , " + arr[result[1]]);
+            System.out.println(Arrays.toString(result));
         }else{
             System.out.println("No Pair Found");
         }

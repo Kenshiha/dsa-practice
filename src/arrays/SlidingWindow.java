@@ -2,21 +2,24 @@ package arrays;
 
 public class SlidingWindow {
 
-    public static int windowSum(int[] arr,int k){
+
+    public static int windowSum(int[] arr, int k){
         int n = arr.length;
-        if (k > n)
+        if( k > n){
             return -1;
+        }
 
         int sumWindow = 0;
-        for (int i = 0;i < k;i++){
-             sumWindow += arr[i];
+        for(int i = 0; i < k; i++){
+            sumWindow += arr[i];
         }
         int maxSum = sumWindow;
 
-        for (int i = k; i<n;i++){
+        for(int i = k; i < n; i++){
             sumWindow += arr[i] - arr[i-k];
-            if (sumWindow > maxSum)
+            if(sumWindow > maxSum){
                 maxSum = sumWindow;
+            }
         }
         return maxSum;
     }
