@@ -19,10 +19,23 @@ import java.util.Stack;
             return ans;
         }
 
+        public static int simpleHash(String input){
+            int hash = 0;
+            for(char c : input.toCharArray()){
+                hash = hash * 31 + c;
+            }
+            return hash;
+        }
+
         public static void main(String[] args) {
             int nums[] = {2,7,3,6,5,7};
             int[] res =  nextGreater(nums);
             System.out.println(Arrays.toString(nums));
             System.out.println(Arrays.toString(res));
+
+            System.out.println(simpleHash("Hello World"));
+            System.out.println(simpleHash("Hello"));
+            System.out.println(simpleHash("Hello"));
+            System.out.println(simpleHash("hello"));
         }
     }
