@@ -20,7 +20,7 @@ public class LongPrefix {
 
     public static void main(String[] args){
 
-        String[] strs = {"flock","flower","floeing"};
+        String[] strs = {"flo","flo","flo"};
         System.out.println(longestPrefix(strs));
 
     }
