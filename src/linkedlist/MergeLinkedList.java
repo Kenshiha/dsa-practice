@@ -6,6 +6,10 @@ public class MergeLinkedList {
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
 
+        System.out.println("Before " + dummy.val);
+        System.out.println("Before " + curr.val);
+
+
         while(list1 != null && list2 != null) {
             if(list1.val <= list2.val) {
                 curr.next = list1;
@@ -18,6 +22,7 @@ public class MergeLinkedList {
         }
 
         curr.next = (list1 != null) ? list1 : list2;
+        System.out.println( curr.val);
         return dummy.next;
     }
 
@@ -32,6 +37,7 @@ public class MergeLinkedList {
 
         ListNode result = ml.mergeTwoLists(l1, l2);
 
+        System.out.println("");
         // Print: 1→1→2→3→4→4
         ListNode curr = result;
         while(curr != null) {
