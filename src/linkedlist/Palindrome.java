@@ -1,5 +1,7 @@
 package linkedlist;
 
+import java.sql.SQLOutput;
+
 public class Palindrome {
     public boolean isPalindrome(ListNode head) {
         ListNode slow = head, fast = head;
@@ -11,6 +13,7 @@ public class Palindrome {
 
         // Reverse 2nd half
         ListNode prev = null, curr = slow;
+
         while(curr != null) {
             ListNode next = curr.next;
             curr.next = prev;
