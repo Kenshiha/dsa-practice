@@ -6,10 +6,6 @@ public class MergeLinkedList {
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
 
-        System.out.println("Before " + dummy.val);
-        System.out.println("Before " + curr.val);
-
-
         while(list1 != null && list2 != null) {
             if(list1.val <= list2.val) {
                 curr.next = list1;
