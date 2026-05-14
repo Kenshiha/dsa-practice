@@ -1,12 +1,13 @@
 public class test {
-
+   private int a;
+   private int b;
     public int test(){
         System.out.println("What will be printed");
         return 0;
     }
-    public int math(int a, int b){
-        int x ;
-        int y ;
+    public int math(int x, int y){
+        this.a = x;
+        this.b = y;
         int c = a+b;
         return c;
     }
