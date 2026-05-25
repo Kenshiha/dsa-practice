@@ -53,10 +53,14 @@ public class Median {
             Median median = new Median();
             int[] arr1 = {1,3,6};
             int[] arr2 = {2,4,5};
+            int[] arr3 = {1,3,5};
+            int[] arr4 = {2,4};
 
             double result = median.findMedianSortedArrays(arr1,arr2);
 
             System.out.println(result);
+            double result2 = median.findMedianSortedArrays(arr3,arr4);
+            System.out.println(result2);
         }
     }
 
