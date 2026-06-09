@@ -7,6 +7,8 @@ public class RemoveNth {
         ListNode slow = dummy;
         ListNode fast = dummy;
 
+
+
         for(int i = 0; i <= n; i++) {  //0->1->2->3->4->5->6
             fast = fast.next;
         }
