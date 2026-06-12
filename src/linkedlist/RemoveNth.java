@@ -28,7 +28,7 @@ public class RemoveNth {
 
         // Build: 1→2→3→4→5, n=2 (remove 4)
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3,
-                new ListNode(4, new ListNode(5,new ListNode(6))))));
+                new ListNode(4, new ListNode(5,new ListNode(6,new ListNode(7)))))));
 
         ListNode result = rn.removeNthFromEnd(head, 3);
 
