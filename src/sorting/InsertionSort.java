@@ -9,10 +9,12 @@ public class InsertionSort {
             int current = arr[i];
             int j = i-1;
             while (j >=0 && current < arr[j]){
+                int temp = arr[j+1];
                 arr[j+1] = arr[j];
+                arr[j] = temp;
                 j--;
             }
-            arr[j+1] = current;
+            //arr[j+1] = current;
         }
     }
 
