@@ -19,6 +19,7 @@ import java.util.Stack;
             return ans;
         }
 
+        // not related to next greater
         public static int simpleHash(String input){
             int hash = 0;
             for(char c : input.toCharArray()){
