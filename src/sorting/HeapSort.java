@@ -11,6 +11,13 @@ public class HeapSort {
        heap = new int[capacity];
    }
 
+   public void insert(int val){
+       if(size >= capacity){
+           throw new IndexOutOfBoundsException();
+       }
+       heap[size++] = val;
+   }
+
    public void heapSort(){
        if(size <= 0){
            return;
@@ -42,9 +49,10 @@ public class HeapSort {
        }
 
        if(largest != i){
-           int temp = heap[i];
-           heap[i] = heap[largest];
-           heap[largest] = temp;
+//           int temp = heap[i];
+//           heap[i] = heap[largest];
+//           heap[largest] = temp;
+           swap(heap,i,largest);
            heapifyDown(heap,n,largest);
        }
    }
@@ -55,7 +63,24 @@ public class HeapSort {
        heap[j] = temp;
    }
 
+   public void display(){
+       for(int i = 0; i < capacity; i++){
+           System.out.print(heap[i] + ",");
+       }
+   }
+
     public static void main(String[] args){
 
+       HeapSort heap = new HeapSort(8);
+
+       heap.insert(10);
+       heap.insert(20);
+       heap.insert(30);
+       heap.insert(40);
+       heap.insert(50);
+       heap.insert(60);
+
+       heap.heapSort();
+       heap.display();
     }
 }
