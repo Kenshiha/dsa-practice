@@ -24,4 +24,14 @@ public class HappyNum {
             }
             return sum;
         }
+
+        public static void main(String[] args){
+            HappyNum num = new HappyNum();
+
+            boolean res = num.isHappy(19);
+            boolean res2 = num.isHappy(2);
+
+            System.out.println(res);
+            System.out.println(res2);
+        }
 }
