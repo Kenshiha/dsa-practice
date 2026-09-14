@@ -8,8 +8,12 @@ public class DynamicArray {
         size = 0;
         arr = new int[capacity];
     }
+
+
     //Insert at the end of an array
     public void add(int val){
+
+
         if(size == capacity){
             grow();
         }
