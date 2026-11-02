@@ -1,9 +1,13 @@
 package Sudoku;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SudokuSolver {
 
     private static final int GRID_SIZE = 9;
 
+    // checks if number is in whole row
     private static boolean isNumInRow(int[][] sudoku, int number, int row){
 
         for(int i = 0; i < GRID_SIZE; i++){
@@ -14,6 +18,7 @@ public class SudokuSolver {
         return false;
     }
 
+    // checks if number is in whole column
     private static boolean isNumInColumn(int[][] sudoku, int number, int column){
 
         for(int i = 0; i < GRID_SIZE; i++){
@@ -24,6 +29,7 @@ public class SudokuSolver {
         return false;
     }
 
+    // checks if number is in local 3x3 box
     private static boolean isNumInBox(int[][] sudoku, int number, int row, int column){
         int gridRow = row - row % 3;
         int gridColumn = column - column % 3;
@@ -49,18 +55,33 @@ public class SudokuSolver {
             for(int column = 0; column < GRID_SIZE; column++){
                 if(sudoku[row][column] == 0){
 
+                    int bestRow = -1;
+                    int bestColumn = -1;
+                    int minCandidate = 10;
+                    List<Integer> bestCandidates = null;
+                    List<Integer> candidates = new ArrayList<>();
+
                     for(int numToTry = 1; numToTry <= GRID_SIZE; numToTry++){
                         if(isValid(sudoku,numToTry,row,column)){
-                            sudoku[row][column] = numToTry;
+                            //sudoku[row][column] = numToTry;
+                            candidates.add(numToTry);
 
-                            if(solveSudoku(sudoku)){
-                                return true;
-                            }else {
-                                sudoku[row][column] = 0;
-                            }
+//                            if(solveSudoku(sudoku)){
+//                                return true;
+//                            }else {
+//                                sudoku[row][column] = 0;
+//                            }
                         }
                     }
-                    return false;
+
+                    if(candidates.size() < minCandidate){
+                        minCandidate = candidates.size();
+
+                        bestRow = row;
+                        bestColumn = column;
+                        bestCandidates = candidates;
+                    }
+                   // return false;
                 }
             }
         }
