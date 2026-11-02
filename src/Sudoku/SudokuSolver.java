@@ -51,41 +51,56 @@ public class SudokuSolver {
     }
 
     private static boolean solveSudoku(int[][] sudoku){
+        int bestRow = -1;
+        int bestColumn = -1;
+        int minCandidate = 10;
+        List<Integer> bestCandidates = null;
+
+
         for(int row = 0; row < GRID_SIZE; row++){
             for(int column = 0; column < GRID_SIZE; column++){
                 if(sudoku[row][column] == 0){
 
-                    int bestRow = -1;
-                    int bestColumn = -1;
-                    int minCandidate = 10;
-                    List<Integer> bestCandidates = null;
                     List<Integer> candidates = new ArrayList<>();
 
                     for(int numToTry = 1; numToTry <= GRID_SIZE; numToTry++){
                         if(isValid(sudoku,numToTry,row,column)){
-                            //sudoku[row][column] = numToTry;
                             candidates.add(numToTry);
-
-//                            if(solveSudoku(sudoku)){
-//                                return true;
-//                            }else {
-//                                sudoku[row][column] = 0;
-//                            }
                         }
+                    }
+                    if(candidates.isEmpty()){
+                        return false;
                     }
 
                     if(candidates.size() < minCandidate){
                         minCandidate = candidates.size();
-
                         bestRow = row;
                         bestColumn = column;
                         bestCandidates = candidates;
                     }
-                   // return false;
                 }
             }
         }
-        return true;
+
+        if(bestRow == -1){
+            return true;
+        }
+        if(findCandidat(sudoku,bestRow,bestColumn,bestCandidates)){
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean findCandidat(int[][] sudoku, int bestRow, int bestColumn, List<Integer> bestCandidate){
+        for(int num : bestCandidate){
+            sudoku[bestRow][bestColumn] = num;
+
+            if(solveSudoku(sudoku)){
+                return true;
+            }
+            sudoku[bestRow][bestColumn] = 0;
+        }
+        return false;
     }
 
     public static void main(String[] args){
