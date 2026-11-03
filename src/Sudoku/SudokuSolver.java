@@ -85,17 +85,19 @@ public class SudokuSolver {
         if(bestRow == -1){
             return true;
         }
-        if(findCandidat(sudoku,bestRow,bestColumn,bestCandidates)){
+        if(findCandidet(sudoku,bestRow,bestColumn,bestCandidates)){
             return true;
         }
         return false;
     }
 
-    private static boolean findCandidat(int[][] sudoku, int bestRow, int bestColumn, List<Integer> bestCandidate){
+    private static boolean findCandidet(int[][] sudoku, int bestRow, int bestColumn, List<Integer> bestCandidate){
         for(int num : bestCandidate){
             sudoku[bestRow][bestColumn] = num;
 
             if(solveSudoku(sudoku)){
+
+
                 return true;
             }
             sudoku[bestRow][bestColumn] = 0;
