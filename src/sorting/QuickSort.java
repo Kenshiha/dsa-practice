@@ -32,12 +32,12 @@ public class QuickSort {
         return i+1;
     }
 
-//    public static void swap(int[] arr, int i, int j){
-//
-//        int temp = arr[i];
-//        arr[i] = arr[j];
-//        arr[j] = temp;
-//    }
+    public static void swap(int[] arr, int i, int j){
+
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 
     public static void main(String[] args){
         int[] arr = {11,2,23,10,5,8,15,9};
