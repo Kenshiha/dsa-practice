@@ -26,9 +26,10 @@ public class Duplicatea {
 
         removeDuplicate(head);
         ListNode temp = head;
-        while (temp != null){
+        while (temp.next != null){
             System.out.print(temp.val + "->");
             temp = temp.next;
         }
+        System.out.print(temp.val);
     }
 }
