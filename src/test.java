@@ -15,21 +15,19 @@ public class test {
     public int bst(int[] nums, int target){
 
         int left = 0;
-        int right = nums.length-1;
+        int right = nums.length - 1;
 
-        while (left <= right){
+        while(left < right){
+            int middle = left + (right - left)/2;
 
-            int ans = left + (right - left) / 2;
-
-            if(nums[ans] == target){
-                return ans;
-            } else if (nums[ans] < target) {
-                left = ans + 1;
-            }else {
-                right = ans - 1;
+            if(nums[middle] == target){
+                return middle;
+            } else if (nums[middle] < target) {
+                left = middle + 1;
+            }else{
+                right = right + 1;
             }
         }
-
         return -1;
     }
     public static void main(String[] args){

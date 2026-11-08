@@ -8,7 +8,6 @@ public class Duplicatea {
     public static ListNode removeDuplicate(ListNode head){
 
         ListNode curr = head;
-
         while(curr != null && curr.next != null){
             if(curr.val == curr.next.val){
                 curr.next = curr.next.next;
@@ -16,7 +15,6 @@ public class Duplicatea {
                 curr = curr.next;
             }
         }
-
         return head;
     }
 
