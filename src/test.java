@@ -36,7 +36,6 @@ public class test {
         obj.test();
         int d = obj.math(5,4);
         System.out.println(d);
-        System.out.println("what");
 
     }
 
