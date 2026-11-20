@@ -96,8 +96,6 @@ public class SudokuSolver {
             sudoku[bestRow][bestColumn] = num;
 
             if(solveSudoku(sudoku)){
-
-
                 return true;
             }
             sudoku[bestRow][bestColumn] = 0;
