@@ -30,12 +30,24 @@ public class test {
         }
         return -1;
     }
+
+    public static void testing(){
+
+        for(int i = 0; i < 6; i++){
+            System.out.println(i);
+        }
+    }
+
+
+
     public static void main(String[] args){
 
-        test obj = new test();
-        obj.test();
-        int d = obj.math(5,4);
-        System.out.println(d);
+//        test obj = new test();
+//        obj.test();
+//        int d = obj.math(5,4);
+//        System.out.println(d);
+
+        testing();
 
     }
 
