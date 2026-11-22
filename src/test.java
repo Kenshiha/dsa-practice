@@ -31,15 +31,20 @@ public class test {
         return -1;
     }
 
-    public static void testing(){
+    public static void testing(int n){
 
-        for(int i = 0; i < 6; i++){
-            System.out.println(i);
+        for(int i = 0; i < n; i++){
+            //System.out.print(i + "i, ");
+            for(int j = 0; j < n; j++){
+              //  System.out.print(j + "j, ");
+                for(int k = 0; k < n; k++){
+                    System.out.print(k + " ");
+                }
+                System.out.println();
+            }
+            System.out.println();
         }
     }
-
-
-
     public static void main(String[] args){
 
 //        test obj = new test();
@@ -47,7 +52,7 @@ public class test {
 //        int d = obj.math(5,4);
 //        System.out.println(d);
 
-        testing();
+        testing(6);
 
     }
 
