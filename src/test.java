@@ -35,9 +35,9 @@ public class test {
 
         for(int i = 0; i < n; i++){
             //System.out.print(i + "i, ");
-            for(int j = 0; j < n; j++){
-              //  System.out.print(j + "j, ");
-                for(int k = 0; k < n; k++){
+            for(int j = i; j < n; j++){
+                System.out.print(j + " ");
+                for(int k = i; k < n; k++){
                     System.out.print(k + " ");
                 }
                 System.out.println();
