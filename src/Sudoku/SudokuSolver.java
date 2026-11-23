@@ -6,7 +6,6 @@ import java.util.List;
 public class SudokuSolver {
 
     private static final int GRID_SIZE = 9;
-
     // checks if number is in whole row
     private static boolean isNumInRow(int[][] sudoku, int number, int row){
 
@@ -17,7 +16,6 @@ public class SudokuSolver {
         }
         return false;
     }
-
     // checks if number is in whole column
     private static boolean isNumInColumn(int[][] sudoku, int number, int column){
 
@@ -136,7 +134,5 @@ public class SudokuSolver {
             }
             System.out.println();
         }
-
-
     }
 }
